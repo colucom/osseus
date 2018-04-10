@@ -1,16 +1,17 @@
 {
   "name": "osseus",
   "version": "1.0.0",
-  "description": "",
+  "description": "Osseus modular web server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm install",
+    "test": "standard"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/colucom/osseus.git"
   },
-  "author": "",
+  "author": "Tal Beja",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/colucom/osseus/issues"
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/colucom/osseus#readme",
   "dependencies": {
     "async": "^2.6.0"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
   }
 }
