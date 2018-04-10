@@ -28,7 +28,7 @@ const initModuleDeps = (osseus) => {
       if (typeof dependencies === 'string') {
         dependencies = dependencies.split(',')
       }
-      console.log(`dependencies: ${dependencies}`)
+      console.log(`${key} dependencies: ${dependencies}`)
       modules[moduleName] = dependencies
       modules[moduleName].push(async () => {
         key = key.replace('_', '-')
