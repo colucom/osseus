@@ -19,7 +19,7 @@
   "homepage": "https://github.com/colucom/osseus#readme",
   "dependencies": {
     "async": "^2.6.0",
-    "osseus-config": "^0.0.1",
+    "osseus-config": "^0.0.2",
     "osseus-logger": "^0.0.1",
     "osseus-server": "^0.0.1",
     "osseus-wallet": "^0.0.3"
