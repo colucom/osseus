@@ -22,7 +22,7 @@
     "osseus-config": "^0.0.1",
     "osseus-logger": "^0.0.1",
     "osseus-server": "^0.0.1",
-    "osseus-wallet": "^0.0.2"
+    "osseus-wallet": "^0.0.3"
   },
   "devDependencies": {
     "standard": "^11.0.1"
