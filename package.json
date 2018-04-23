@@ -20,8 +20,8 @@
   "dependencies": {
     "async": "^2.6.0",
     "osseus-config": "^0.0.3",
-    "osseus-logger": "^0.0.2",
-    "osseus-server": "^0.0.1",
+    "osseus-logger": "^0.0.3",
+    "osseus-server": "^0.0.2",
     "osseus-wallet": "^0.0.3"
   },
   "devDependencies": {
