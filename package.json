@@ -20,10 +20,11 @@
   "dependencies": {
     "async": "^2.6.0",
     "osseus-config": "^0.0.5",
-    "osseus-logger": "^0.0.4",
-    "osseus-mongo": "^0.0.1",
-    "osseus-server": "^0.0.2",
-    "osseus-wallet": "^0.0.3"
+    "osseus-logger": "^0.0.5",
+    "osseus-mongo": "^0.0.2",
+    "osseus-router": "^0.0.1",
+    "osseus-server": "^0.0.4",
+    "osseus-wallet": "^0.0.6"
   },
   "devDependencies": {
     "standard": "^11.0.1"
