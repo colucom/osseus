@@ -24,7 +24,7 @@
     "osseus-mongo": "^0.0.2",
     "osseus-queue": "^0.0.3",
     "osseus-router": "^0.0.2",
-    "osseus-server": "^0.0.4",
+    "osseus-server": "^0.1.0",
     "osseus-wallet": "^0.0.6"
   },
   "devDependencies": {
