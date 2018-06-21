@@ -20,7 +20,7 @@
   "dependencies": {
     "async": "^2.6.0",
     "osseus-config": "^0.1.0",
-    "osseus-logger": "^0.0.5",
+    "osseus-logger": "^0.1.0",
     "osseus-mongo": "^0.0.2",
     "osseus-queue": "^0.0.3",
     "osseus-router": "^0.0.2",
