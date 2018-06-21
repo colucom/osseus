@@ -4,7 +4,7 @@
 
 Osseus modular web server
 
-### Install
+## Install
 ```bash
 $ npm install osseus
 ```
@@ -18,7 +18,7 @@ This will install all osseus modules as well
 * [osseus-server](https://github.com/colucom/osseus-server)
 * [osseus-wallet](https://github.com/colucom/osseus-wallet)
 
-### Usage
+## Usage
 
 First, create `index.js`:
 
