@@ -23,7 +23,7 @@
     "osseus-logger": "^0.1.0",
     "osseus-mongo": "^0.1.0",
     "osseus-queue": "^0.1.0",
-    "osseus-router": "^0.1.0",
+    "osseus-router": "^0.1.1",
     "osseus-server": "^0.1.0",
     "osseus-wallet": "^0.0.6"
   },
