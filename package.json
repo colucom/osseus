@@ -25,7 +25,8 @@
     "osseus-queue": "^0.1.0",
     "osseus-router": "^0.2.0",
     "osseus-server": "^0.1.0",
-    "osseus-wallet": "^0.0.6"
+    "osseus-wallet": "^0.0.6",
+    "osseus-mq": "^0.1.0"
   },
   "devDependencies": {
     "standard": "^11.0.1"
