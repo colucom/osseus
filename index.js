@@ -1,4 +1,5 @@
 const async = require('async')
+let osseus
 
 const init = async (config) => {
   const log = msg => { if (config.debug) { console.log(msg) } }
@@ -6,8 +7,8 @@ const init = async (config) => {
   return new Promise(async (resolve, reject) => {
     config = config || await require('osseus-config').init()
 
+    osseus = {config: config}
     const modules = {}
-    const osseus = {config: config}
 
     log(`osseus.config.keys: ${osseus.config.keys}`)
     osseus.config.keys.forEach(async key => {
@@ -48,6 +49,17 @@ const init = async (config) => {
   })
 }
 
+const get = () => {
+  return new Promise(async (resolve, reject) => {
+    if (!osseus) {
+      osseus = await init()
+      resolve(osseus)
+    }
+    resolve(osseus)
+  })
+}
+
 module.exports = {
-  init: init
+  init: init,
+  get: get
 }
