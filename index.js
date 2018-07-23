@@ -5,7 +5,7 @@ const init = async (config) => {
   const log = msg => { if (config.debug) { console.log(msg) } }
 
   return new Promise(async (resolve, reject) => {
-    config = config || await require('osseus-config').init()
+    config = config || await require('osseus-config').init().catch(err => { reject(err) })
 
     osseus = {config: config}
     const modules = {}
@@ -42,17 +42,21 @@ const init = async (config) => {
       }
     })
 
-    async.auto(modules, err => {
-      if (err) return reject(err)
-      resolve(osseus)
-    })
+    try {
+      async.auto(modules, err => {
+        if (err) return reject(err)
+        resolve(osseus)
+      })
+    } catch (err) {
+      reject(err)
+    }
   })
 }
 
 const get = () => {
   return new Promise(async (resolve, reject) => {
     if (!osseus) {
-      osseus = await init()
+      osseus = await init().catch(err => { reject(err) })
       resolve(osseus)
     }
     resolve(osseus)
