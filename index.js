@@ -1,11 +1,19 @@
 const async = require('async')
 let osseus
 
+const traceAndClarifyIfPossible = (config) => {
+  if (config && (config.debug || (config.env && config.env.toLowerCase() !== 'production'))) {
+    require('trace-and-clarify-if-possible')
+  }
+}
+
 const init = async (config) => {
   const log = msg => { if (config.debug) { console.log(msg) } }
 
   return new Promise(async (resolve, reject) => {
     config = config || await require('osseus-config').init().catch(err => { reject(err) })
+
+    traceAndClarifyIfPossible(config)
 
     osseus = {config: config}
     const modules = {}

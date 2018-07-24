@@ -19,14 +19,15 @@
   "homepage": "https://github.com/colucom/osseus#readme",
   "dependencies": {
     "async": "^2.6.0",
-    "osseus-config": "^0.1.1",
+    "osseus-config": "^0.1.2",
     "osseus-logger": "^0.1.0",
     "osseus-mongo": "^0.2.1",
     "osseus-mq": "^0.1.0",
     "osseus-queue": "^0.1.1",
     "osseus-router": "^0.2.0",
     "osseus-server": "^0.1.1",
-    "osseus-wallet": "^0.0.6"
+    "osseus-wallet": "^0.0.6",
+    "trace-and-clarify-if-possible": "^1.0.3"
   },
   "devDependencies": {
     "standard": "^11.0.1"
