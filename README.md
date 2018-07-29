@@ -10,6 +10,10 @@ $ npm install osseus
 ```
 This will install all osseus modules as well
 
+***after installing update `package.json` to include `"osseus": "~x.y.z"` instead of `"osseus": "^x.y.z"`***
+
+***see [semantic-versioning](https://docs.npmjs.com/getting-started/semantic-versioning)***
+
 * [osseus-config](https://github.com/colucom/osseus-config)
 * [osseus-logger](https://github.com/colucom/osseus-logger)
 * [osseus-mongo](https://github.com/colucom/osseus-mongo)
