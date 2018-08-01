@@ -1,6 +1,6 @@
 {
   "name": "osseus",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "description": "Osseus modular web server",
   "main": "index.js",
   "scripts": {
