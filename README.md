@@ -17,6 +17,7 @@ This will install all osseus modules as well
 * [osseus-config](https://github.com/colucom/osseus-config)
 * [osseus-logger](https://github.com/colucom/osseus-logger)
 * [osseus-mongo](https://github.com/colucom/osseus-mongo)
+* [osseus-mq](https://github.com/colucom/osseus-mq)
 * [osseus-queue](https://github.com/colucom/osseus-queue)
 * [osseus-router](https://github.com/colucom/osseus-router)
 * [osseus-server](https://github.com/colucom/osseus-server)
