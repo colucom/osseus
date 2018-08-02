@@ -37,8 +37,12 @@ const init = async (config) => {
             log(`required: ${key}`)
             if (module.start) {
               log(`${key}.start()...`)
-              await module.start()
-              log(`started ${key}`)
+              try {
+                await module.start()
+                log(`started ${key}`)
+              } catch (err) {
+                throw err
+              }
             }
             osseus[moduleName] = module
             return module
