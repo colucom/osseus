@@ -1,9 +1,29 @@
 const async = require('async')
+const path = require('path')
+const cwd = process.cwd()
 let osseus
 
 const traceAndClarifyIfPossible = (config) => {
   if (config && (config.debug || (config.env && config.env.toLowerCase() !== 'production'))) {
     require('trace-and-clarify-if-possible')
+  }
+}
+
+const requireModule = (moduleName) => {
+  let module
+  try {
+    module = require(moduleName)
+    return module
+  } catch (e1) {
+    if (e1.code !== 'MODULE_NOT_FOUND') {
+      throw e1
+    }
+    try {
+      module = require(path.join(cwd, '/node_modules/', moduleName))
+      return module
+    } catch (e2) {
+      throw e2
+    }
   }
 }
 
@@ -33,7 +53,7 @@ const init = async (config) => {
           key = key.replace('_', '-')
           log(`require(${key}).init()...`)
           try {
-            let module = await require(key).init(osseus)
+            let module = await requireModule(key).init(osseus)
             log(`required: ${key}`)
             if (module.start) {
               log(`${key}.start()...`)
