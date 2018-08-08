@@ -7,6 +7,21 @@ const traceAndClarifyIfPossible = (config) => {
   }
 }
 
+const requireModule = (moduleName) => {
+  try {
+    return require(moduleName)
+  } catch (e1) {
+    if (e1.code !== 'MODULE_NOT_FOUND') {
+      throw e1
+    }
+    try {
+      return module.parent.require(moduleName)
+    } catch (e2) {
+      throw e2
+    }
+  }
+}
+
 const init = async (config) => {
   const log = msg => { if (config.debug) { console.log(msg) } }
 
@@ -33,19 +48,19 @@ const init = async (config) => {
           key = key.replace('_', '-')
           log(`require(${key}).init()...`)
           try {
-            let module = await require(key).init(osseus)
+            let _module = await requireModule(key).init(osseus)
             log(`required: ${key}`)
-            if (module.start) {
+            if (_module.start) {
               log(`${key}.start()...`)
               try {
-                await module.start()
+                await _module.start()
                 log(`started ${key}`)
               } catch (err) {
                 throw err
               }
             }
-            osseus[moduleName] = module
-            return module
+            osseus[moduleName] = _module
+            return _module
           } catch (err) {
             console.error(`osseus init`, err.stack)
             process.exit(1)
