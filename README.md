@@ -56,6 +56,8 @@ Generally speaking, if you wish for one osseus module to initialize before anoth
 
 For example, if we wish to have an [osseus-server](https://github.com/colucom/osseus-server) but make sure we have [osseus-logger](https://github.com/colucom/osseus-logger) before that we will add to our configuration: `OSSEUS_SERVER_DEPENDENCIES: ['logger']`
 
+## Contributing
+Please see [contributing guidelines](https://github.com/colucom/osseus/blob/master/.github/CONTRIBUTING.md).
 
 ## License
 Code released under the [MIT License](https://github.com/colucom/osseus/blob/master/LICENSE).
