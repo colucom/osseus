@@ -55,7 +55,7 @@ const init = async (config) => {
             return _module
           } catch (err) {
             console.error(`osseus init`, err.stack)
-            process.exit(1)
+            reject(err)
           }
         })
       }
