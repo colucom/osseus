@@ -22,7 +22,7 @@ const init = async (config) => {
   const log = msg => { if (config.debug) { console.log(msg) } }
 
   return new Promise(async (resolve, reject) => {
-    config = config || await require('osseus-config').init().catch(err => { reject(err) })
+    config = config || await require('@colucom/osseus-config').init().catch(err => { reject(err) })
 
     traceAndClarifyIfPossible(config)
 
