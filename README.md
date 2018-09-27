@@ -44,13 +44,36 @@ $ node index.js --OSSEUS_SERVER_PORT 8888 --OSSEUS_SERVER_DEPENDENCIES ["'logger
 
 For more configuration options see [osseus-config](https://github.com/colucom/osseus-config) 
 
-#### Dependencies
+#### Special module configurations
+
+##### Load
+
+Osseus modules by default are loaded when they appear in the configuration.
+
+You can specify explicitly whether to load a module or not using the `OSSEUS_<MODULE-NAME>_LOAD` configuration param which can be `true` or `false` (boolean)
+
+##### Private
+
+You can write your own private osseus modules which you do not wish to publish to the public npm.
+
+In order to use them you will need to specify explicitly that they are private using the `OSSEUS_<MODULE-NAME>_PRIVATE` configuration param which can be `true` or `false` (boolean)
+
+##### Scope
+
+You can write your own osseus modules and publish to the public npm under your own scope/organization.
+
+In order to use them you will need to specify explicitly the scope of the module using the `OSSEUS_<MODULE-NAME>_SCOPE` configuration param. 
+
+By default modules are loaded from the [`@colucom`](https://www.npmjs.com/settings/colucom/packages) organization.
+
+
+##### Dependencies
 
 Osseus modules by default are initialized parallely.
 
 In order for modules to initialize after specific modules we have the "dependencies" configuration setting.
 
-Generally speaking, if you wish for one osseus module to initialize before another you'll have to add the following configuration param: `OSSEUS_MODULE-1_DEPENDENCIES: ['module-2']`
+Generally speaking, if you wish for one osseus module to initialize before another you'll have to add the following configuration param: `OSSEUS_<MODULE-NAME>_DEPENDENCIES: ['<other-module-name>']`
 
 For example, if we wish to have an [osseus-server](https://github.com/colucom/osseus-server) but make sure we have [osseus-logger](https://github.com/colucom/osseus-logger) before that we will add to our configuration: `OSSEUS_SERVER_DEPENDENCIES: ['logger']`
 
