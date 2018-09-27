@@ -6,7 +6,7 @@ Osseus modular web server
 
 ## Install
 ```bash
-$ npm install osseus
+$ npm install @colucom/osseus
 ```
 ***after installing update `package.json` to include `"osseus": "~x.y.z"` instead of `"osseus": "^x.y.z"`***
 
@@ -18,8 +18,6 @@ In order to use any one of those modules you should install it on your app
 * [osseus-config](https://github.com/colucom/osseus-config)
 * [osseus-logger](https://github.com/colucom/osseus-logger)
 * [osseus-mongo](https://github.com/colucom/osseus-mongo)
-* [osseus-mq](https://github.com/colucom/osseus-mq)
-* [osseus-queue](https://github.com/colucom/osseus-queue)
 * [osseus-router](https://github.com/colucom/osseus-router)
 * [osseus-server](https://github.com/colucom/osseus-server)
 * [osseus-wallet](https://github.com/colucom/osseus-wallet)

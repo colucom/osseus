@@ -1,6 +1,6 @@
 {
-  "name": "osseus",
-  "version": "2.0.2",
+  "name": "@colucom/osseus",
+  "version": "2.1.0",
   "description": "Osseus modular web server",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/colucom/osseus#readme",
   "dependencies": {
     "async": "^2.6.0",
-    "osseus-config": "^0.1.7",
+    "@colucom/osseus-config": "^0.2.0",
     "trace-and-clarify-if-possible": "^1.0.3"
   },
   "devDependencies": {
