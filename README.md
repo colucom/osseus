@@ -6,7 +6,7 @@ Osseus modular web server
 
 ## Install
 ```bash
-$ npm install osseus
+$ npm install @colucom/osseus
 ```
 ***after installing update `package.json` to include `"osseus": "~x.y.z"` instead of `"osseus": "^x.y.z"`***
 
