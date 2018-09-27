@@ -33,31 +33,41 @@ const init = async (config) => {
     osseus.config.keys.forEach(async key => {
       log(`key: ${key}`)
       if (key.startsWith('osseus')) {
-        let moduleName = key.substring(7) // 'osseus_' length
-        let dependencies = osseus.config[key].dependencies || []
-        if (typeof dependencies === 'string') {
-          dependencies = dependencies.split(',')
-        }
-        log(`${key} dependencies: ${dependencies}`)
-        modules[moduleName] = dependencies
-        modules[moduleName].push(async () => {
-          key = key.replace('_', '-')
-          log(`require(${key}).init()...`)
-          try {
-            const _module = await requireModule(key).init(osseus)
-            log(`required: ${key}`)
-            if (_module.start) {
-              log(`${key}.start()...`)
-              await _module.start()
-              log(`started ${key}`)
-            }
-            osseus[moduleName] = _module
-            return _module
-          } catch (err) {
-            console.error(`osseus init`, err.stack)
-            reject(err)
+        let loadModule = typeof osseus.config[key].load !== 'undefined' ? osseus.config[key].load : true
+        let isPrivate = typeof osseus.config[key].private !== 'undefined' ? osseus.config[key].private : false
+        let scope = osseus.config[key].scope
+        log(`${key} loadModule: ${loadModule}, isPrivate: ${isPrivate}, scope: ${scope}`)
+
+        if (loadModule) {
+          let moduleName = key.substring(7) // 'osseus_' length
+          let dependencies = osseus.config[key].dependencies || []
+          if (typeof dependencies === 'string') {
+            dependencies = dependencies.split(',')
           }
-        })
+          log(`${key} dependencies: ${dependencies}`)
+          modules[moduleName] = dependencies
+          modules[moduleName].push(async () => {
+            key = key.replace('_', '-')
+            key = isPrivate ? key : (scope ? `@${scope}/${key}` : `@colucom/${key}`)
+            log(`require(${key}).init()...`)
+            try {
+              const _module = await requireModule(key).init(osseus)
+              log(`required: ${key}`)
+              if (_module.start) {
+                log(`${key}.start()...`)
+                await _module.start()
+                log(`started ${key}`)
+              }
+              osseus[moduleName] = _module
+              return _module
+            } catch (err) {
+              console.error(`osseus init`, err.stack)
+              reject(err)
+            }
+          })
+        } else {
+          console.warn(`not loading ${key}...`)
+        }
       }
     })
 
