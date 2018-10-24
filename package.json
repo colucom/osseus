@@ -1,6 +1,6 @@
 {
   "name": "@colucom/osseus",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Osseus modular web server",
   "main": "index.js",
   "scripts": {
