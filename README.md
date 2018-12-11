@@ -66,6 +66,9 @@ In order to use them you will need to specify explicitly the scope of the module
 
 By default modules are loaded from the [`@colucom`](https://www.npmjs.com/settings/colucom/packages) organization.
 
+##### Use_Trace
+For debugging purposes, osseus uses [trace-and-clarify-if-possible](https://www.npmjs.com/package/trace-and-clarify-if-possible).
+This module causes memory leaks so it can only be used in `debug` mode. To activate this module set `USE_TRACE` to `true`.
 
 ##### Dependencies
 

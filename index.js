@@ -2,8 +2,12 @@ const async = require('async')
 let osseus
 
 const traceAndClarifyIfPossible = (config) => {
-  if (config && (config.debug || (config.env && config.env.toLowerCase() !== 'production'))) {
+  if (config && config.use_trace && config.env && config.env.toLowerCase() !== 'production') {
+    console.log('using trace-and-clarify-if-possible, MEMORY LEAKS EXPECTED!!')
+
     require('trace-and-clarify-if-possible')
+  } else {
+    console.log('Not using trace-and-clarify-if-possible')
   }
 }
 
